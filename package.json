@@ -1,0 +1,35 @@
+{
+  "name": "hexo-word-counter",
+  "description": "Symbols count and time to read for articles.",
+  "main": "index",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=10.9.0"
+  },
+  "scripts": {
+    "test": "mocha test --reporter spec",
+    "test-cov": "nyc --print both _mocha -- test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/next-theme/hexo-word-counter.git"
+  },
+  "keywords": [
+    "hexo",
+    "count",
+    "symbols",
+    "time-to-read"
+  ],
+  "author": "Mimi <stevenjoezhang@gmail.com> (https://zhangshuqiao.org)",
+  "license": "LGPL-3.0",
+  "dependencies": {
+    "hexo-util": "2.1.0"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "eslint": "7.0.0",
+    "eslint-config-theme-next": "1.1.4",
+    "mocha": "7.1.2",
+    "nyc": "15.0.1"
+  }
+}
