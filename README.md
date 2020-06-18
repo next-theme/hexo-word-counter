@@ -17,6 +17,7 @@ Better than [`hexo-reading-time`](https://github.com/ierhyna/hexo-reading-time) 
 
 ```bash
 $ npm install hexo-word-counter
+$ hexo clean
 ```
 
 ## Usage
