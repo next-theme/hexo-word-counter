@@ -27,6 +27,6 @@
     "eslint": "7.5.0",
     "eslint-config-theme-next": "1.2.1",
     "mocha": "7.1.2",
-    "nyc": "15.0.1"
+    "nyc": "15.1.0"
   }
 }
