@@ -3,9 +3,6 @@
   "description": "Symbols count and time to read for articles.",
   "main": "index",
   "version": "0.0.1",
-  "engines": {
-    "node": ">=10.9.0"
-  },
   "scripts": {
     "test": "mocha test --reporter spec",
     "test-cov": "nyc --print both _mocha -- test/index.js"

@@ -1,7 +1,6 @@
 # Hexo Word Counter
 
 [![npm-image]][npm-url]
-[![node-image]][node-url]
 [![hexo-image]][hexo-url]
 [![lic-image]](LICENSE)
 
@@ -135,7 +134,6 @@ Jade: `span=` `template`
 
 [npm-image]: https://img.shields.io/npm/v/hexo-word-counter?style=flat-square
 [hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.0-blue?style=flat-square
-[node-image]: https://img.shields.io/node/v/hexo-word-counter?style=flat-square
 [cover-image]: https://img.shields.io/coveralls/next-theme/hexo-word-counter/master?style=flat-square
 [lic-image]: https://img.shields.io/npm/l/hexo-word-counter?style=flat-square
 
@@ -144,6 +142,5 @@ Jade: `span=` `template`
 [dt-image]: https://img.shields.io/npm/dt/hexo-word-counter?style=flat-square
 
 [npm-url]: https://www.npmjs.com/package/hexo-word-counter
-[node-url]: https://nodejs.org/en/download/releases
 [hexo-url]: https://hexo.io
 [cover-url]: https://coveralls.io/github/next-theme/hexo-word-counter?branch=master "Coverage of Tests"
