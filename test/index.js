@@ -10,7 +10,7 @@ const helper = require('../lib/helper');
 const config = {
   awl: 4,
   wpm: 275,
-  suffix: "mins."
+  suffix: 'mins.'
 };
 
 helper.setConfig(config);
@@ -22,12 +22,12 @@ describe('Hexo Symbols Count Time', () => {
   describe('Test symbolsCount function & check should / expect / assert', () => {
     const symbols = helper.symbolsCount('Count of symbols is 22');
 
-    it("should - 22", () => {
+    it('should - 22', () => {
       symbols.should.exist;
       symbols.should.eq(22);
     });
 
-    it("expect - 22", () => {
+    it('expect - 22', () => {
       expect(symbols).to.equal(22);
     });
 

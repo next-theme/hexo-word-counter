@@ -1,4 +1,7 @@
 {
   "extends": "theme-next",
-  "root": true
+  "root": true,
+  "rules": {
+    "key-spacing": 0
+  }
 }

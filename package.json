@@ -4,6 +4,7 @@
   "main": "index",
   "version": "0.0.1",
   "scripts": {
+    "lint": "eslint index.js lib/",
     "test": "mocha test --reporter spec",
     "test-cov": "nyc --print both _mocha -- test/index.js"
   },
