@@ -27,7 +27,7 @@
     "@next-theme/eslint-config": "0.0.1",
     "chai": "4.2.0",
     "eslint": "7.5.0",
-    "mocha": "8.0.1",
+    "mocha": "8.2.1",
     "nyc": "15.1.0"
   }
 }
