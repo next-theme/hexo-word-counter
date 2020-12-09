@@ -8,10 +8,7 @@
     "test": "mocha test --reporter spec",
     "test-cov": "nyc --print both _mocha -- test/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/next-theme/hexo-word-counter.git"
-  },
+  "repository": "next-theme/hexo-word-counter",
   "keywords": [
     "hexo",
     "count",
@@ -21,13 +18,13 @@
   "author": "Mimi <stevenjoezhang@gmail.com> (https://zhangshuqiao.org)",
   "license": "LGPL-3.0",
   "dependencies": {
-    "hexo-util": "2.1.0"
+    "hexo-util": "2.4.0"
   },
   "devDependencies": {
-    "@next-theme/eslint-config": "0.0.1",
+    "@next-theme/eslint-config": "0.0.2",
     "chai": "4.2.0",
-    "eslint": "7.5.0",
-    "mocha": "8.0.1",
+    "eslint": "7.15.0",
+    "mocha": "8.2.1",
     "nyc": "15.1.0"
   }
 }
