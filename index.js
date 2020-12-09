@@ -5,7 +5,7 @@
 const helper = require('./lib/helper');
 const { stripHTML } = require('hexo-util');
 
-const config = hexo.config.symbols_count_time = Object.assign({
+hexo.config.symbols_count_time = Object.assign({
   symbols: true,
   time: true,
   total_symbols: true,
@@ -15,6 +15,7 @@ const config = hexo.config.symbols_count_time = Object.assign({
   wpm: 275,
   suffix: 'mins.'
 }, hexo.config.symbols_count_time);
+const config = hexo.config.symbols_count_time;
 
 helper.setConfig(config);
 
