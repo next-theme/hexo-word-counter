@@ -61,9 +61,11 @@ But if you usualy mix your posts with English, `awl` to `4` and `wpm` to `275` w
 This plugin integrated in «NexT» and after plugin enabled in main Hexo config, you may adjust options in NexT config:
 
 ```yml
+post_meta:
+  item_text: true
+
 symbols_count_time:
   separated_meta: true
-  item_text_post: true
   item_text_total: false
 ```
 
@@ -78,15 +80,15 @@ $ cd node_modules/hexo-word-counter
 ### Tests
 
 ```bash
-$ npm install mocha chai --save-dev
+$ npm install
 $ npm test
 ```
 
 ### Tests with coverage
 
 ```bash
-$ npm install -g nyc
-$ nyc --print both node_modules/.bin/_mocha -- test/index.js
+$ npm install
+$ npm run test-cov
 ```
 
 ### Templates
