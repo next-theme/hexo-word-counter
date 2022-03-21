@@ -21,7 +21,7 @@
     "hexo-util": "2.4.0"
   },
   "devDependencies": {
-    "@next-theme/eslint-config": "0.0.2",
+    "@next-theme/eslint-config": "0.0.3",
     "chai": "4.3.6",
     "eslint": "7.17.0",
     "mocha": "8.2.1",
