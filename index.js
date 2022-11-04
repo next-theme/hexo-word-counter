@@ -5,13 +5,14 @@
 const helper = require('./lib/helper');
 const { wordCount } = require('./index.node');
 
+const rBacktick = /^((?:[^\S\r\n]*>){0,3}[^\S\r\n]*)(`{3,}|~{3,})[^\S\r\n]*((?:.*?[^`\s])?)[^\S\r\n]*\n((?:[\s\S]*?\n)?)(?:(?:[^\S\r\n]*>){0,3}[^\S\r\n]*)\2[^\S\r\n]?(\n+|$)/gm;
+
 hexo.config.symbols_count_time = Object.assign({
   symbols: true,
   time: true,
   total_symbols: true,
   total_time: true,
   exclude_codeblock: false,
-  awl: 4,
   wpm: 275,
   suffix: 'mins.'
 }, hexo.config.symbols_count_time);
@@ -40,7 +41,8 @@ if (config.total_time) {
 
 if (config.symbols || config.time || config.total_symbols || config.total_time) {
   hexo.extend.filter.register('after_post_render', data => {
-    const { _content } = data;
+    let { _content } = data;
+    if (config.exclude_codeblock) _content = _content.replace(rBacktick, '');
     data.length = wordCount(_content);
   }, 0);
 }
