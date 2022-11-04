@@ -5,9 +5,11 @@
 [![hexo-image]][hexo-url]
 [![lic-image]](LICENSE)
 
-Symbols count and time to read for articles in Hexo blog.
+Word count and time to read for articles in Hexo blog.
 
-Better than [`hexo-reading-time`](https://github.com/ierhyna/hexo-reading-time) and faster than [`hexo-wordcount`](https://github.com/willin/hexo-wordcount). No external dependencies.
+The word count is based on [Unicode® Standard Annex #29](https://www.unicode.org/reports/tr29/). Thus, when multiple languages are present in the post content, the total word count can be accurately counted.
+
+With the power of Rust, this plugin is faster than almost all other Hexo plugins that offer similar functionality. See the [benchmark](#Benchmark) below.
 
 ## Installation
 
@@ -129,6 +131,18 @@ Or with predefined parameters:
 SWIG / Nunjucks: `{{` `template` `}}`\
 EJS: `<%-` `template` `%>`\
 Jade: `span=` `template`
+
+## Benchmark
+
+See [GitHub actions](https://github.com/next-theme/hexo-word-counter/actions/runs/3391961808/jobs/5637627050).
+
+| Plugin installed | Time of `hexo g` |
+| - | - |
+| Baseline | 19.48s |
+| [hexo-symbols-count-time](https://github.com/theme-next/hexo-symbols-count-time) | 19.86s (+1.99%) |
+| [hexo-reading-time](https://github.com/ierhyna/hexo-reading-time) | 23.81s (+22.26%) |
+| [hexo-wordcount](https://github.com/willin/hexo-wordcount) | 21.44s (+10.08%) |
+| hexo-word-counter | 19.63s (+0.78%) |
 
 [github-image]: https://img.shields.io/github/workflow/status/next-theme/hexo-word-counter/Linter?style=flat-square
 [npm-image]: https://img.shields.io/npm/v/hexo-word-counter?style=flat-square
