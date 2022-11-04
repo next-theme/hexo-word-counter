@@ -1,0 +1,19 @@
+[package]
+name = "word-counter"
+publish = false
+version = "0.10.3"
+description = "Node.js bindings for word-counter"
+authors = ["Mimi <stevenjoezhang@gmail.com>"]
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+regex = "1"
+unicode-segmentation = "1.3.0"
+
+[dependencies.neon]
+version = "0.10"
+default-features = false
+features = ["napi-1"]

@@ -3,7 +3,7 @@
 'use strict';
 
 const helper = require('./lib/helper');
-const { stripHTML } = require('hexo-util');
+const { wordCount } = require('./index.node');
 
 hexo.config.symbols_count_time = Object.assign({
   symbols: true,
@@ -40,8 +40,7 @@ if (config.total_time) {
 
 if (config.symbols || config.time || config.total_symbols || config.total_time) {
   hexo.extend.filter.register('after_post_render', data => {
-    let { content } = data;
-    if (config.exclude_codeblock) content = content.replace(/<pre>.*?<\/pre>/g, '');
-    data.length = stripHTML(content).replace(/\r?\n|\r/g, '').replace(/\s+/g, '').length;
+    const { _content } = data;
+    data.length = wordCount(_content);
   }, 0);
 }
