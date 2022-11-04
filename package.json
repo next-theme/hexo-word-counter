@@ -30,7 +30,7 @@
   "license": "LGPL-3.0",
   "dependencies": {
     "cargo-cp-artifact": "^0.1",
-    "hexo-util": "2.6.0"
+    "hexo-util": "2.7.0"
   },
   "devDependencies": {
     "@next-theme/eslint-config": "0.0.3",
