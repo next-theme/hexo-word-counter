@@ -13,6 +13,10 @@ jobs:
       uses: actions/setup-node@v3
     - name: Set up Rust
       uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        profile: minimal
+        default: true
     - run: npm install
     - run: npm run build-release
     - run: cd test
