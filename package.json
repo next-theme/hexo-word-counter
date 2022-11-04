@@ -4,14 +4,18 @@
   "description": "Symbols count and time to read for articles.",
   "main": "index",
   "files": [
+    "src/**",
+    "Cargo.toml",
     "lib",
-    "index.js"
+    "index.js",
+    "postinstall.js"
   ],
   "scripts": {
     "build": "cargo-cp-artifact --artifact cdylib word-counter index.node -- cargo build --message-format=json-render-diagnostics",
     "build-debug": "npm run build --",
     "build-release": "npm run build -- --release",
     "lint": "eslint index.js lib/",
+    "postinstall": "node postinstall.js",
     "test": "mocha test --reporter spec",
     "test-cov": "c8 --print both _mocha -- test/index.js"
   },
