@@ -19,6 +19,7 @@ jobs:
         default: true
     - run: npm install
     - run: npm run build-release
-    - run: cd test
-    - run: bash benchmark.sh
-    - run: cat report.csv
+    - run: |
+        cd test
+        bash benchmark.sh
+        cat report.csv
