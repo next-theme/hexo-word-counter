@@ -6,3 +6,4 @@ tmp/
 package-lock.json
 Cargo.lock
 target/
+index.node
