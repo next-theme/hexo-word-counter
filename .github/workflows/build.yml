@@ -1,0 +1,48 @@
+name: Build and publish Node.js package
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-11.0, ubuntu-18.04, windows-2019]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get version
+        id: version
+        shell: bash
+        run: echo ::set-output name=VERSION::"$([[ "$GITHUB_REF" == refs/tags/v* ]] && echo ${GITHUB_REF#refs/tags/v} || echo '0.0.0')"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          default: true
+
+      - name: Build native module
+        id: module
+        shell: bash
+        run: |
+          npm install
+          npm run build-release
+          echo ::set-output name=BINARY_NAME::"$(node -e 'console.log([process.platform, process.arch].join("__"))')"
+
+      - name: Upload to R2
+        run: |
+          pip3 install boto3
+          python3 deploy.py index.node hexo-word-counter/bin/nodejs/${{ steps.version.outputs.VERSION }}/${{ steps.module.outputs.BINARY_NAME }}.node
+        env:
+          ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
+          SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+          ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
