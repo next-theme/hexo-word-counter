@@ -62,7 +62,7 @@ const downloadNativeBinary = async() => {
     let binary;
     try {
       binary = await fetch(
-        `https://wilsonl.in/minify-html/bin/nodejs/${pkg.version}/${binaryName}.node`
+        `https://archive.zsq.im/hexo-word-counter/bin/nodejs/${pkg.version}/${binaryName}.node`
       );
     } catch (e) {
       if (
