@@ -1,12 +1,16 @@
 {
   "name": "hexo-word-counter",
+  "version": "0.0.3",
   "description": "Symbols count and time to read for articles.",
   "main": "index",
-  "version": "0.0.3",
+  "files": [
+    "lib",
+    "index.js"
+  ],
   "scripts": {
     "lint": "eslint index.js lib/",
     "test": "mocha test --reporter spec",
-    "test-cov": "nyc --print both _mocha -- test/index.js"
+    "test-cov": "c8 --print both _mocha -- test/index.js"
   },
   "repository": "next-theme/hexo-word-counter",
   "keywords": [
@@ -22,9 +26,9 @@
   },
   "devDependencies": {
     "@next-theme/eslint-config": "0.0.3",
+    "c8": "^7.12.0",
     "chai": "4.3.6",
     "eslint": "8.11.0",
-    "mocha": "9.2.1",
-    "nyc": "15.1.0"
+    "mocha": "9.2.1"
   }
 }
