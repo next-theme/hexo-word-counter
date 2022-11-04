@@ -31,7 +31,6 @@ symbols_count_time:
   total_symbols: true
   total_time: true
   exclude_codeblock: false
-  awl: 4
   wpm: 275
   suffix: "mins."
 ```
@@ -40,10 +39,6 @@ If `symbols_count_time` option is not specified, the default parameters will be 
 
 ### Parameters
 
-* `awl` – Average Word Length (chars count in word). Default: `4`. You can check this [here](https://charactercounttool.com).
-  * CN &asymp; `2`
-  * EN &asymp; `5`
-  * RU &asymp; `6`
 * `wpm` – Words Per Minute. Default: `275`. You can check this [here](https://wordcounter.net).
   * Slow &asymp; `200`
   * Normal &asymp; `275`
@@ -53,10 +48,10 @@ If `symbols_count_time` option is not specified, the default parameters will be 
 * `exclude_codeblock` – Allow to exclude all content inside code blocks for more accurate words counting.\
   If not defined, `false` will be used as default.
 
-**Note for Chinese users:** because in Chinese language average word length about `~1.5` and if you at most cases write posts in Chinese (without mixed English), recommended to set `awl` to `2` and `wpm` to `300`.\
-But if you usualy mix your posts with English, `awl` to `4` and `wpm` to `275` will be nice.
+**Note for Chinese users:** if you write posts in Chinese at most cases (without mixed English), recommended to set `wpm` to `300`.\
+But if you usualy mix your posts with English, set `wpm` to `275` will be nice.
 
-### NexT theme
+### For NexT Theme
 
 This plugin integrated in «NexT» and after plugin enabled in main Hexo config, you may adjust options in NexT config:
 
@@ -93,13 +88,13 @@ $ npm run test-cov
 
 ### Templates
 
-#### Symbols Count
+#### Word Count
 
 ```js
 {{ symbolsCount(post) }}
 ```
 
-#### Symbols Time
+#### Post Reading Time
 
 ```js
 {{ symbolsTime(post) }}
@@ -111,13 +106,13 @@ Or with predefined parameters:
 {{ symbolsTime(post, awl, wpm, suffix) }}
 ```
 
-#### Symbols Count Total
+#### Total Word Count
 
 ```js
 {{ symbolsCountTotal(site) }}
 ```
 
-#### Symbols Time Total
+#### Total Post Reading Time
 
 ```js
 {{ symbolsTimeTotal(site) }}
