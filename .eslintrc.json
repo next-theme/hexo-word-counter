@@ -2,6 +2,7 @@
   "extends": "@next-theme",
   "root": true,
   "rules": {
-    "key-spacing": 0
+    "key-spacing": 0,
+    "no-console": 0
   }
 }
