@@ -32,7 +32,7 @@ def upload_pkg_to_r2(account_id, secret_access_key, access_key_id, bucket_name, 
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: python3 upload.py <filename> <upload_file_path>")
+        print("Usage: python3 deploy.py <filename> <upload_file_path>")
         exit(1)
     account_id = os.environ["ACCOUNT_ID"]
     secret_access_key = os.environ["SECRET_ACCESS_KEY"]
