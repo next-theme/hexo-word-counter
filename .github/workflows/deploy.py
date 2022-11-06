@@ -7,7 +7,7 @@ from botocore.exceptions import ClientError
 
 # https://github.com/cloudflare/cloudflared/blob/135c8e6d13663d2aa2d3c9169cde0cfc1e6e2062/release_pkgs.py#L36
 def upload_pkg_to_r2(account_id, secret_access_key, access_key_id, bucket_name, filename, upload_file_path):
-    endpoint_url = "https://{}.r2.cloudflarestorage.com".format(account_id)
+    endpoint_url = f"https://{account_id}.r2.cloudflarestorage.com"
 
     config = Config(
         region_name="auto",
@@ -24,8 +24,7 @@ def upload_pkg_to_r2(account_id, secret_access_key, access_key_id, bucket_name, 
         config=config,
     )
 
-    print("uploading asset: {} to {} in bucket {}...".format(
-        filename, upload_file_path, bucket_name))
+    print(f"uploading asset: {filename} to {upload_file_path} in bucket {bucket_name}...")
     try:
         r2.upload_file(filename, bucket_name, upload_file_path)
     except ClientError as e:
@@ -33,7 +32,7 @@ def upload_pkg_to_r2(account_id, secret_access_key, access_key_id, bucket_name, 
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: python3 upload.py <filename> <upload_file_path>")
+        print("Usage: python3 deploy.py <filename> <upload_file_path>")
         exit(1)
     account_id = os.environ["ACCOUNT_ID"]
     secret_access_key = os.environ["SECRET_ACCESS_KEY"]
