@@ -51,7 +51,7 @@ If `symbols_count_time` option is not specified, the default parameters will be 
   If not defined, `false` will be used as default.
 
 **Note for Chinese users:** if you write posts in Chinese at most cases (without mixed English), recommended to set `wpm` to `300`.\
-But if you usualy mix your posts with English, set `wpm` to `275` will be nice.
+But if you usually mix your posts with English, set `wpm` to `275` will be nice.
 
 ### For NexT Theme
 
@@ -68,69 +68,82 @@ symbols_count_time:
 
 ## Development
 
+You have to prepare both Node.js and rust toolchain to develop this plugin.
+
 ```bash
-$ cd hexo
-$ git clone https://github.com/next-theme/hexo-word-counter.git node_modules/hexo-word-counter
-$ cd node_modules/hexo-word-counter
+$ git clone https://github.com/next-theme/hexo-word-counter.git
+$ cd hexo-word-counter
+$ npm install
 ```
 
-### Tests
+You can run tests with or without coverage feedback:
 
 ```bash
-$ npm install
 $ npm test
-```
-
-### Tests with coverage
-
-```bash
-$ npm install
 $ npm run test-cov
 ```
 
-### Templates
+And you can install the development version in your blog:
 
-#### Word Count
+```bash
+$ cd blog
+$ npm i ../path/to/hexo-word-counter
+```
 
-```js
+## Theme Integration
+
+If you're a theme developer, you can use the following code to integrate this plugin.
+
+### Word Count
+
+The syntax is different depending on the templating engine of the theme.
+
+For Nunjucks / Swig:
+```
 {{ symbolsCount(post) }}
 ```
 
-#### Post Reading Time
+For Ejs:
+```
+<%- symbolsCount(post) %>
+```
 
-```js
+For Pug / Jade:
+```
+span=symbolsCount(post)
+```
+
+In the latter part, we use Nunjucks syntax as an example.
+
+### Post Reading Time
+
+```
 {{ symbolsTime(post) }}
 ```
 
 Or with predefined parameters:
 
-```js
+```
 {{ symbolsTime(post, awl, wpm, suffix) }}
 ```
 
-#### Total Word Count
+### Total Word Count
 
-```js
+```
 {{ symbolsCountTotal(site) }}
 ```
 
-#### Total Post Reading Time
+### Total Post Reading Time
 
-```js
+```
 {{ symbolsTimeTotal(site) }}
 ```
 
 Or with predefined parameters:
 
-```js
+```
 {{ symbolsTimeTotal(site, awl, wpm, suffix) }}
 ```
-
-#### Renderers syntax
-
-SWIG / Nunjucks: `{{` `template` `}}`\
-EJS: `<%-` `template` `%>`\
-Jade: `span=` `template`
 
 ## Benchmark
 
@@ -144,7 +157,7 @@ See [GitHub actions](https://github.com/next-theme/hexo-word-counter/actions/run
 | [hexo-wordcount](https://github.com/willin/hexo-wordcount) | 21.44s (+10.08%) |
 | hexo-word-counter | 19.63s (+0.78%) |
 
-[github-image]: https://img.shields.io/github/workflow/status/next-theme/hexo-word-counter/Linter?style=flat-square
+[github-image]: https://img.shields.io/github/actions/workflow/status/next-theme/hexo-word-counter/linter.yml?branch=main&style=flat-square
 [npm-image]: https://img.shields.io/npm/v/hexo-word-counter?style=flat-square
 [hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.0-blue?style=flat-square
 [cover-image]: https://img.shields.io/coveralls/next-theme/hexo-word-counter/master?style=flat-square
