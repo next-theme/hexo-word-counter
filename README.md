@@ -152,10 +152,10 @@ See [GitHub actions](https://github.com/next-theme/hexo-word-counter/actions/run
 | Plugin installed | Time of `hexo g` |
 | - | - |
 | Baseline | 19.48s |
-| [hexo-symbols-count-time](https://github.com/theme-next/hexo-symbols-count-time) | 19.86s (+1.99%) |
-| [hexo-reading-time](https://github.com/ierhyna/hexo-reading-time) | 23.81s (+22.26%) |
-| [hexo-wordcount](https://github.com/willin/hexo-wordcount) | 21.44s (+10.08%) |
 | hexo-word-counter | 19.63s (+0.78%) |
+| [hexo-symbols-count-time](https://github.com/theme-next/hexo-symbols-count-time) | 19.86s (+1.99%) |
+| [hexo-wordcount](https://github.com/willin/hexo-wordcount) | 21.44s (+10.08%) |
+| [hexo-reading-time](https://github.com/ierhyna/hexo-reading-time) | 23.81s (+22.26%) |
 
 [github-image]: https://img.shields.io/github/actions/workflow/status/next-theme/hexo-word-counter/linter.yml?branch=main&style=flat-square
 [npm-image]: https://img.shields.io/npm/v/hexo-word-counter?style=flat-square
