@@ -13,7 +13,7 @@ jobs:
       matrix:
         os: [macos-11.0, windows-2019]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Get version
         id: version
