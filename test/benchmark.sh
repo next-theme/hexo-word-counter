@@ -46,7 +46,7 @@ echo "=============================================================="
     rm -rf .tmp-hexo-optimize-test
     git clone https://github.com/hexojs/hexo-theme-unit-test .tmp-hexo-optimize-test
     cd .tmp-hexo-optimize-test
-    git submodule add https://github.com/SukkaLab/hexo-many-posts source/_posts/hexo-many-posts
+    git submodule add https://github.com/hexojs/hexo-many-posts source/_posts/hexo-many-posts
     git submodule add -f https://github.com/hexojs/hexo-theme-landscape themes/landscape
     npm install --silent
 
