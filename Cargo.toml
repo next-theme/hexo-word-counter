@@ -11,9 +11,9 @@ crate-type = ["cdylib"]
 
 [dependencies]
 regex = "1"
-unicode-segmentation = "1.10.0"
+unicode-segmentation = "1.11.0"
 
 [dependencies.neon]
-version = "0.10"
+version = "1"
 default-features = false
 features = ["napi-1"]
