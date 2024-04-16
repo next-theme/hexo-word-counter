@@ -1,6 +1,6 @@
 {
   "name": "hexo-word-counter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Symbols count and time to read for articles.",
   "main": "index",
   "files": [
