@@ -18,7 +18,8 @@ jobs:
       - name: Get version
         id: version
         shell: bash
-        run: echo ::set-output name=VERSION::"$([[ "$GITHUB_REF" == refs/tags/v* ]] && echo ${GITHUB_REF#refs/tags/v} || echo '0.0.0')"
+        run: |
+          echo "VERSION=$([[ "$GITHUB_REF" == refs/tags/v* ]] && echo ${GITHUB_REF#refs/tags/v} || echo '0.0.0')" >> $GITHUB_OUTPUT
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -30,7 +31,7 @@ jobs:
           npm install
           npm run build-release
           npm test
-          echo ::set-output name=BINARY_NAME::"$(node -e 'console.log([process.platform, process.arch].join("__"))')"
+          echo "BINARY_NAME=$(node -e 'console.log([process.platform, process.arch].join("__"))')" >> $GITHUB_OUTPUT
 
       - name: Upload to R2
         run: |
