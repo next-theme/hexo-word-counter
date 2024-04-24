@@ -18,8 +18,8 @@ With the power of Rust, this plugin is faster than almost all other Hexo plugins
 [![dt-image]][npm-url]
 
 ```bash
-$ npm install hexo-word-counter
-$ hexo clean
+npm install hexo-word-counter
+hexo clean
 ```
 
 ## Usage
@@ -71,23 +71,23 @@ symbols_count_time:
 You have to prepare both Node.js and rust toolchain to develop this plugin.
 
 ```bash
-$ git clone https://github.com/next-theme/hexo-word-counter.git
-$ cd hexo-word-counter
-$ npm install
+git clone https://github.com/next-theme/hexo-word-counter.git
+cd hexo-word-counter
+npm install
 ```
 
 You can run tests with or without coverage feedback:
 
 ```bash
-$ npm test
-$ npm run test-cov
+npm test
+npm run test-cov
 ```
 
 And you can install the development version in your blog:
 
 ```bash
-$ cd blog
-$ npm i ../path/to/hexo-word-counter
+cd blog
+npm i ../path/to/hexo-word-counter
 ```
 
 ## Theme Integration
