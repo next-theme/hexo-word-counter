@@ -8,13 +8,13 @@ const { wordCount } = require('./index.node');
 const rBacktick = /^((?:[^\S\r\n]*>){0,3}[^\S\r\n]*)(`{3,}|~{3,})[^\S\r\n]*((?:.*?[^`\s])?)[^\S\r\n]*\n((?:[\s\S]*?\n)?)(?:(?:[^\S\r\n]*>){0,3}[^\S\r\n]*)\2[^\S\r\n]?(\n+|$)/gm;
 
 hexo.config.symbols_count_time = Object.assign({
-  symbols: true,
-  time: true,
-  total_symbols: true,
-  total_time: true,
+  symbols          : true,
+  time             : true,
+  total_symbols    : true,
+  total_time       : true,
   exclude_codeblock: false,
-  wpm: 275,
-  suffix: 'mins.'
+  wpm              : 275,
+  suffix           : 'mins.'
 }, hexo.config.symbols_count_time);
 const config = hexo.config.symbols_count_time;
 
