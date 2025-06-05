@@ -19,7 +19,8 @@ jobs:
         id: version
         shell: bash
         run: |
-          echo "VERSION=$([[ "$GITHUB_REF" == refs/tags/v* ]] && echo ${GITHUB_REF#refs/tags/v} || echo '0.0.0')" >> $GITHUB_OUTPUT
+          VERSION=$(node -e 'console.log(require("./package.json").version)')
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
