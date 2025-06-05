@@ -147,7 +147,7 @@ Or with predefined parameters:
 
 ## Benchmark
 
-See [GitHub actions](https://github.com/next-theme/hexo-word-counter/actions/runs/3391961808/jobs/5637627050).
+See [GitHub actions](https://github.com/next-theme/hexo-word-counter/actions/workflows/benchmark.yml).
 
 | Plugin installed | Time of `hexo g` |
 | - | - |

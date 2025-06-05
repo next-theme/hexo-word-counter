@@ -3,9 +3,9 @@ import sys
 import time
 
 def run_command_and_measure_time():
-    os.system("npx hexo clean")
+    os.system("npx hexo clean > /dev/null 2>&1")
     start_time = time.time()
-    os.system("npx hexo g")
+    os.system("npx hexo g > /dev/null 2>&1")
     return time.time() - start_time
 
 
