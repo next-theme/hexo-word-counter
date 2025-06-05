@@ -14,7 +14,7 @@ function uploadPkgToR2(accountId, secretAccessKey, accessKeyId, bucketName, file
     signatureVersion: 'v4'
   });
 
-  console.log(`Uploading asset: ${filename} to ${uploadFilePath} in bucket ${bucketName}, using ${endpointUrl}`);
+  console.log(`Uploading asset: ${filename} to ${uploadFilePath} in bucket ${bucketName}`);
 
   // Set up the parameters for the S3 upload
   const params = {
