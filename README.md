@@ -157,15 +157,15 @@ See [GitHub actions](https://github.com/next-theme/hexo-word-counter/actions/wor
 | [hexo-wordcount](https://github.com/willin/hexo-wordcount) | 21.44s (+10.08%) |
 | [hexo-reading-time](https://github.com/ierhyna/hexo-reading-time) | 23.81s (+22.26%) |
 
-[github-image]: https://img.shields.io/github/actions/workflow/status/next-theme/hexo-word-counter/linter.yml?branch=main&style=flat-square
-[npm-image]: https://img.shields.io/npm/v/hexo-word-counter?style=flat-square
-[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.0-blue?style=flat-square
-[cover-image]: https://img.shields.io/coveralls/next-theme/hexo-word-counter/master?style=flat-square
-[lic-image]: https://img.shields.io/npm/l/hexo-word-counter?style=flat-square
+[github-image]: https://img.shields.io/github/actions/workflow/status/next-theme/hexo-word-counter/linter.yml?branch=main&style=for-the-badge
+[npm-image]: https://img.shields.io/npm/v/hexo-word-counter?style=for-the-badge
+[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.0-blue?style=for-the-badge
+[cover-image]: https://img.shields.io/coveralls/next-theme/hexo-word-counter/master?style=for-the-badge
+[lic-image]: https://img.shields.io/npm/l/hexo-word-counter?style=for-the-badge
 
-[size-image]: https://img.shields.io/github/languages/code-size/next-theme/hexo-word-counter?style=flat-square
-[dm-image]: https://img.shields.io/npm/dm/hexo-word-counter?style=flat-square
-[dt-image]: https://img.shields.io/npm/dt/hexo-word-counter?style=flat-square
+[size-image]: https://img.shields.io/github/languages/code-size/next-theme/hexo-word-counter?style=for-the-badge
+[dm-image]: https://img.shields.io/npm/dm/hexo-word-counter?style=for-the-badge
+[dt-image]: https://img.shields.io/npm/dt/hexo-word-counter?style=for-the-badge
 
 [github-url]: https://github.com/next-theme/hexo-word-counter/actions?query=workflow%3ALinter
 [npm-url]: https://www.npmjs.com/package/hexo-word-counter
