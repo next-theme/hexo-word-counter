@@ -7,11 +7,60 @@ on:
   workflow_dispatch:
 
 jobs:
+  linux-x64:
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:20.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare toolchain (Ubuntu 20.04 container)
+        shell: bash
+        run: |
+          set -eux
+          apt-get update
+          DEBIAN_FRONTEND=noninteractive apt-get install -y \
+            build-essential python3 pkg-config git ca-certificates curl \
+            libssl-dev patchelf binutils
+          curl -fsSL https://sh.rustup.rs | sh -s -- -y --default-toolchain stable
+          echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+
+      - name: Get version
+        id: version
+        shell: bash
+        run: |
+          VERSION=$(node -e 'console.log(require("./package.json").version)')
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Build native module
+        id: module
+        shell: bash
+        run: |
+          npm install
+          npm run build-release
+          npm test
+          echo "BINARY_NAME=$(node -e 'console.log([process.platform, process.arch].join("__"))')" >> $GITHUB_OUTPUT
+
+      - name: Upload to R2
+        shell: bash
+        env:
+          ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
+          SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+          ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+        run: |
+          node .github/workflows/deploy.js index.node \
+            hexo-word-counter/bin/nodejs/${{ steps.version.outputs.VERSION }}/${{ steps.module.outputs.BINARY_NAME }}.node
+
   build:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-22.04, ubuntu-22.04-arm, macos-13, macos-14, windows-2022]
+        os: [ubuntu-22.04-arm, macos-13, macos-14, windows-2022]
     steps:
       - uses: actions/checkout@v4
 
