@@ -1,0 +1,15 @@
+{
+  "name": "word-counter",
+  "collaborators": [
+    "Mimi <stevenjoezhang@gmail.com>"
+  ],
+  "description": "Node.js bindings for word-counter",
+  "version": "0.10.3",
+  "files": [
+    "word_counter_bg.wasm",
+    "word_counter.js",
+    "word_counter.d.ts"
+  ],
+  "main": "word_counter.js",
+  "types": "word_counter.d.ts"
+}
