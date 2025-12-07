@@ -1,13 +1,11 @@
-use neon::prelude::*;
+use wasm_bindgen::prelude::*;
 
 // unicode word seperator (CJK friendly)
 use unicode_segmentation::UnicodeSegmentation;
 use regex::Regex;
 
-fn word_count(mut cx: FunctionContext) -> JsResult<JsNumber> {
-  let str = cx.argument::<JsString>(0)?;
-
-  let content = str.value(&mut cx);
+#[wasm_bindgen(js_name = wordCount)]
+pub fn word_count(content: &str) -> f64 {
   let mut word_count = 0;
   // match links and files in grammar "[](...)"
   let link_re = Regex::new(r"\]\((.*?)\)").unwrap();
@@ -19,11 +17,6 @@ fn word_count(mut cx: FunctionContext) -> JsResult<JsNumber> {
     word_count += words.len();
   }
 
-  Ok(cx.number(word_count as f64))
+  word_count as f64
 }
 
-#[neon::main]
-fn main(mut cx: ModuleContext) -> NeonResult<()> {
-  cx.export_function("wordCount", word_count)?;
-  Ok(())
-}

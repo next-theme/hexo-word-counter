@@ -4,7 +4,7 @@ require('chai').should();
 
 const { LoremIpsum } = require('lorem-ipsum');
 const helper = require('../lib/helper');
-const { wordCount } = require('../index.node');
+const { wordCount } = require('../pkg/word_counter.js');
 
 class Post {
   constructor(content) {

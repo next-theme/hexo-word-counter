@@ -2,19 +2,16 @@
   "name": "hexo-word-counter",
   "version": "0.2.2",
   "description": "Symbols count and time to read for articles.",
-  "main": "index",
+  "main": "index.js",
   "files": [
-    "src/**",
-    "Cargo.toml",
+    "pkg/**",
     "lib",
-    "index.js",
-    "postinstall.js"
+    "index.js"
   ],
   "scripts": {
-    "build": "cargo-cp-artifact --artifact cdylib word-counter index.node -- cargo build --message-format=json-render-diagnostics",
-    "build-release": "npm run build -- --release",
+    "build": "wasm-pack build --target nodejs --out-name word_counter && node -e \"require('fs').rmSync('pkg/.gitignore', { force: true })\"",
+    "prepare": "npm run build",
     "lint": "eslint index.js lib/",
-    "postinstall": "node postinstall.js",
     "test": "mocha test --reporter spec",
     "test-cov": "c8 --print both _mocha -- test/index.js"
   },
@@ -27,16 +24,14 @@
   ],
   "author": "Mimi <stevenjoezhang@gmail.com> (https://zhangshuqiao.org)",
   "license": "LGPL-3.0",
-  "dependencies": {
-    "cargo-cp-artifact": "^0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@next-theme/eslint-config": "0.0.5",
-    "aws-sdk": "^2.1599.0",
     "c8": "^10.0.0",
     "chai": "6.2.2",
     "eslint": "9.39.2",
     "lorem-ipsum": "^2.0.8",
-    "mocha": "11.7.5"
+    "mocha": "11.7.5",
+    "wasm-pack": "^0.13.0"
   }
 }

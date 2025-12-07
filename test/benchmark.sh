@@ -64,7 +64,7 @@ echo
 echo "=============================================================="
 echo " ${lpurple}Generating content for baseline...${norm}"
 echo "=============================================================="
-    python3 ../benchmark.py baseline
+    python3 ../test/benchmark.py baseline
 
 echo
 echo "=============================================================="
@@ -73,7 +73,7 @@ echo "=============================================================="
     ejs=themes/landscape/layout/_partial/article.ejs
     npm install hexo-symbols-count-time
     echo '<%= symbolsCount(post) %>' >> $ejs
-    python3 ../benchmark.py hexo-symbols-count-time
+    python3 ../test/benchmark.py hexo-symbols-count-time
 
 echo
 echo "=============================================================="
@@ -83,7 +83,7 @@ echo "=============================================================="
     npm install hexo-reading-time
     git submodule foreach git reset --hard
     echo '<%= readingTime(post.content) %>' >> $ejs
-    python3 ../benchmark.py hexo-reading-time
+    python3 ../test/benchmark.py hexo-reading-time
 
 echo
 echo "=============================================================="
@@ -93,14 +93,14 @@ echo "=============================================================="
     npm install hexo-wordcount
     git submodule foreach git reset --hard
     echo '<%= wordcount(post.content) %>' >> $ejs
-    python3 ../benchmark.py hexo-wordcount
+    python3 ../test/benchmark.py hexo-wordcount
 
 echo
 echo "=============================================================="
 echo " ${lpurple}Generating content for hexo-word-counter...${norm}"
 echo "=============================================================="
     npm uninstall hexo-wordcount
-    npm install ../../
+    npm install ..
     git submodule foreach git reset --hard
     echo '<%= symbolsCount(post) %>' >> $ejs
-    python3 ../benchmark.py hexo-word-counter
+    python3 ../test/benchmark.py hexo-word-counter
