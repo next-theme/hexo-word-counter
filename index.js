@@ -2,11 +2,11 @@
 
 'use strict';
 
-import { setConfig, symbolsCount, symbolsTime, symbolsCountTotal, symbolsTimeTotal } from './lib/helper';
+const { setConfig, symbolsCount, symbolsTime, symbolsCountTotal, symbolsTimeTotal } = require('./lib/helper');
 let wordCount;
-(async () => {
+(() => {
   try {
-    ({ wordCount } = await import('./pkg/word_counter.js'));
+    ({ wordCount } = require('./pkg/word_counter.js'));
   } catch (e) {
     // Fallback or better error handling if module not built
     console.warn('hexo-word-counter: WASM module not found. Run npm run build.');
