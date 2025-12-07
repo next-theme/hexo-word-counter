@@ -7,3 +7,4 @@ package-lock.json
 Cargo.lock
 target/
 index.node
+.tmp-hexo-optimize-test/
