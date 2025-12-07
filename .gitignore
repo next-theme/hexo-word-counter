@@ -8,3 +8,5 @@ Cargo.lock
 target/
 index.node
 .tmp-hexo-optimize-test/
+public/
+wrangler.toml
