@@ -13,3 +13,4 @@ public/
 wrangler.toml
 .wrangler/
 report.csv
+pkg/
