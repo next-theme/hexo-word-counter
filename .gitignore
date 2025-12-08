@@ -4,7 +4,7 @@ tmp/
 *.log
 .idea/
 package-lock.json
-bun-lock.json
+bun.lock
 Cargo.lock
 target/
 index.node
