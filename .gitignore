@@ -4,6 +4,13 @@ tmp/
 *.log
 .idea/
 package-lock.json
+bun.lock
 Cargo.lock
 target/
 index.node
+.tmp-hexo-optimize-test/
+public/
+wrangler.toml
+.wrangler/
+report.csv
+pkg/

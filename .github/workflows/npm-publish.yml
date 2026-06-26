@@ -21,6 +21,13 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
     - name: Update npm to latest version for OIDC support
       run: npm install -g npm@latest
+    - name: Set up Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        profile: minimal
+        default: true
+        target: wasm32-unknown-unknown
     - run: |
         npm install
         npm publish
