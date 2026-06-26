@@ -29,7 +29,7 @@
     "@next-theme/eslint-config": "0.0.5",
     "c8": "^10.0.0",
     "chai": "6.2.2",
-    "eslint": "9.39.2",
+    "eslint": "10.5.0",
     "lorem-ipsum": "^2.0.8",
     "mocha": "11.7.5",
     "wasm-pack": "^0.13.0"
