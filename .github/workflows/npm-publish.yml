@@ -7,7 +7,7 @@ on:
 
 permissions:
   id-token: write  # Required for OIDC
-  contents: read
+  contents: write
 
 jobs:
   npm-publish:
@@ -31,3 +31,7 @@ jobs:
     - run: |
         npm install
         npm publish
+    - name: Create GitHub release
+      run: gh release create "$GITHUB_REF_NAME" --verify-tag --generate-notes --title "$GITHUB_REF_NAME"
+      env:
+        GH_TOKEN: ${{ github.token }}
