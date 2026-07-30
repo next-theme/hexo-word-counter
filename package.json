@@ -32,6 +32,6 @@
     "eslint": "10.5.0",
     "lorem-ipsum": "^3.0.0",
     "mocha": "11.7.6",
-    "wasm-pack": "^0.13.0"
+    "wasm-pack": "^0.15.0"
   }
 }
